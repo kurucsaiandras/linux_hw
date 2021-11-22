@@ -1,17 +1,15 @@
 # Házi feladat
 
 Név/Nevek NEPTUN kóddal:
-- Minta Név (ABC123)
+- Kurucsai András (WWEI3B)
+- Kardos Martin (FRAV6D)
 
 # Feladat kiírás
-A minta feladat egy klasszikus *Aknakereső (Minesweeper)* játék elkészítése grafikus felülettel. A játék célja a mezőn lévő összes akna megtalálása, illetve az összes aknát nem rejtő mező felfedése. A játék indulásakor a pálya egyszínű négyzetekből áll, amelyek alatt aknák rejtőzködhetnek. A tábla mérete és az aknák száma nehézségi szintek alapján változik. A mezők állapota lehet lefedett, felfedett (szomszédos aknák számát mutatja), felfedett aknával, zászlós, kérdőjeles. Az egyes állapotok között az egér gombjaival válthatunk. stb, stb.
+A feladatunkban egy PC és egy Raspberry Pi socketen keresztül kommunikál. A Raspberry-hez egy LED dotmátrix kijelző csatlakozik. A PC-n ezt egy grafikus felületről irányíthatjuk. A LED kijelző több feature-rel rendelkezik, terveink szerint beállíthatjuk, hogy a kijelző kiírjon egy adott sztringet, vagy pl. jelezze, ha a PC-n a felhasználó online meeting hívásban van (hogy a szobatársai ne ordibáljanak).
 A program az alábbi funkciókkal fog rendelkezni:
 * Grafikus felület Qt-ban megvalósítva.
-* Nehézségi szintek választása különböző tábla méretekkel és akna számokkal.
-* Az aknák véletlenszerű elhelyezése.
-* A játék menetének implementálása a felsorolt mezőállapotokkal, a köztük való váltással és a vége állapotok ellenőrzésével.
-* A játék idejének mérése.
-
+* Socket kommunikáció két linux rendszer között.
+* Bekapcsolható a PC-n a mikrofon figyelése: ha az aktív, azt a LED kijelzi
 # Megvalósított program
 Milyen funkciókat sikerült megvalósítani? Milyen eltérések vannak a kiíráshoz képest? Hogyan kell bekonfigurálni, elindítani?
 
