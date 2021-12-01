@@ -1,0 +1,20 @@
+/* Because spidev uses spi bus 0 by default, this device tree file disables it for use to use it.
+    Compile it this way: dtc spidev_disabler.dts -O dtb >spidev_disabler.dtbo
+    and then load it like that: sudo dtoverlay -d . spidev_disabler
+*/
+
+
+/dts-v1/;
+/plugin/;
+
+/ {
+    compatible = "brcm,bcm2708";
+
+    fragment@0 {
+        target = <&spidev0>;
+
+        __overlay__ {
+            status = "disabled";
+        };
+    };
+};
