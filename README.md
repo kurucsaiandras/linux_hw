@@ -5,11 +5,18 @@ Név/Nevek NEPTUN kóddal:
 - Kardos Martin (FRAV6D)
 
 # Feladat kiírás
-A feladatunkban egy PC és egy Raspberry Pi socketen keresztül kommunikál. A Raspberry-hez egy LED dotmátrix kijelző csatlakozik. A PC-n ezt egy grafikus felületről irányíthatjuk. A LED kijelző több feature-rel rendelkezik, terveink szerint beállíthatjuk, hogy a kijelző kiírjon egy adott sztringet, vagy pl. jelezze, ha a PC-n a felhasználó online meeting hívásban van (hogy a szobatársai ne ordibáljanak).
-A program az alábbi funkciókkal fog rendelkezni:
-* Grafikus felület Qt-ban megvalósítva.
+Feladatunkban egy olyan szoftvert valósítunk meg Qt, linux kernel modul, illetve socket felhasználásával amely képes egy Maxim Integrated MAX7219 chipeket használó LED mátrix áramkör vezérlésére.
+Az áramkör 4 db 8x8-as mátrixot tartalmaz melyeket 4db kaszkádosított integrált áramkör vezérel, velük SPI interfészen keresztül lehet kommunikálni.
+
+A szoftver az alábbi funkciókkal fog rendelkezni:
+* Grafikus felület Qt-ban megvalósítva, bekapcsolható, személyre szabható funkciókkal.
 * Socket kommunikáció két linux rendszer között.
-* Bekapcsolható a PC-n a mikrofon figyelése: ha az aktív, azt a LED kijelzi
+* A grafikus felületen keresztül animáció készítése (frame by frame).
+* Rajzok készítése a grafikus felületen, rajzok invertálása.
+* Rajzok elmentése fájlba.
+* Bekapcsolt mikrofon kijelzése.
+* Konfigurálható process kijelzés. (Pl. fut-e a microsoft teams, fut-e a discord? stb.)
+*
 # Megvalósított program
 Milyen funkciókat sikerült megvalósítani? Milyen eltérések vannak a kiíráshoz képest? Hogyan kell bekonfigurálni, elindítani?
 
