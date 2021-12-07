@@ -20,12 +20,12 @@ A szoftver az alábbi funkciókkal fog rendelkezni:
 Az eredeti feladatkiírásunkoz képest csak a konfigurálható process kijelzést nem sikerült megvalósítani.
 
 Szerver elindítása:
-1,) a kernel modul make paranccsal való lefordítása
-2,) "dtc spidev_disabler.dts -O dtb >spidev_disabler.dtbo" parancs segítéségvel a dts fájl fordítása mely az SPI bus 0 használatához szükséges
-3,) a fordított dts betöltése a "sudo dtoverlay -d . spidev_disabler" paranccsal
-4,) a kernel modul betöltése a "sudo insmod max7219x4.ko" paranccsal
-5,) szerver lefordítása a gcc segítségével pl gcc server.c -o server
-6,) a szerver elindítása a ./server {portszám} paranccsal
+* a kernel modul make paranccsal való lefordítása
+* "dtc spidev_disabler.dts -O dtb >spidev_disabler.dtbo" parancs segítéségvel a dts fájl fordítása mely az SPI bus 0 használatához szükséges
+* a fordított dts betöltése a "sudo dtoverlay -d . spidev_disabler" paranccsal
+* a kernel modul betöltése a "sudo insmod max7219x4.ko" paranccsal
+* szerver lefordítása a gcc segítségével pl gcc server.c -o server
+* a szerver elindítása a ./server {portszám} paranccsal
 
 A kliensoldalon a csatlakozás ip cím alapján történik, a kapcsolat megfelelőségét a gui a bal alsó sarokban indikálja.
 
