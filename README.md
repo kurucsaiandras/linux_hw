@@ -34,8 +34,8 @@ https://youtu.be/Xmn5PWXf6pk
 
 # Tapasztalatok
 
-Nem érdemes belekezdeni a megvalósításba a dokumentációk megfelelő tanulmányozása nélkül.
+Nem érdemes belekezdeni a megvalósításba a dokumentációk megfelelő tanulmányozása nélkül. A QT saját típusrendszerének elsajátítása sok utánaolvasást igényelt.
 A QT-ban a hardverrel kapcsolatos bájtok generálása az elképzelésnél könnyebben ment, viszont néhány funkció megvalósítása a dokumentáció alaposabb tanulmányozását igényelte (pl mikrofon lekérdezése).
-A kernel modul első betöltésekor tapasztaltam hogy az SPI bus 0 már le van foglalva a rendszeren más modul által így ehhez kellett megoldást találni ami időigényes volt.
+A kernel modul első betöltésekor tapasztaltuk hogy az SPI bus 0 már le van foglalva a rendszeren más modul által így ehhez kellett megoldást találni ami időigényes volt.
 
 Tapasztalatot gyűjtöttünk a Qt alkalmazások, a kernel modulok készítésében, valamint debuggolásában (pl dmesg), továbbá egy valós fizikai hardver interfészelésében, és a hozzá szükséges felhasználóbarát grafikus felület tervezésében.
