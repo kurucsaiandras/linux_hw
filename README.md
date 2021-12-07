@@ -16,9 +16,8 @@ A szoftver az alábbi funkciókkal fog rendelkezni:
 * Rajzok elmentése fájlba.
 * Bekapcsolt mikrofon kijelzése.
 * Konfigurálható process kijelzés. (Pl. fut-e a microsoft teams, fut-e a discord? stb.)
-*
 # Megvalósított program
-Milyen funkciókat sikerült megvalósítani? Milyen eltérések vannak a kiíráshoz képest? Hogyan kell bekonfigurálni, elindítani?
+Az eredeti feladatkiírásunkoz képest csak a konfigurálható process kijelzést nem sikerült megvalósítani.
 
 Szerver elindítása:
 1,) a kernel modul make paranccsal való lefordítása
@@ -28,9 +27,15 @@ Szerver elindítása:
 5,) szerver lefordítása a gcc segítségével pl gcc server.c -o server
 6,) a szerver elindítása a ./server {portszám} paranccsal
 
+A kliensoldalon a csatlakozás ip cím alapján történik, a kapcsolat megfelelőségét a gui a bal alsó sarokban indikálja.
+
 **Bemutató videó URL:**
 https://youtu.be/Xmn5PWXf6pk
 
 # Tapasztalatok
-Milyen tapasztalatokat gyűjtött a feladat elkészítése során? Mi volt egyszerűbb / nehezebb a tervezetnél? Visszatekintve mit csinálna másként? (pár mondatban)
+
 Nem érdemes belekezdeni a megvalósításba a dokumentációk megfelelő tanulmányozása nélkül.
+A QT-ban a hardverrel kapcsolatos bájtok generálása az elképzelésnél könnyebben ment, viszont néhány funkció megvalósítása a dokumentáció alaposabb tanulmányozását igényelte (pl mikrofon lekérdezése).
+A kernel modul első betöltésekor tapasztaltam hogy az SPI bus 0 már le van foglalva a rendszeren más modul által így ehhez kellett megoldást találni ami időigényes volt.
+
+Tapasztalatot gyűjtöttünk a Qt alkalmazások, a kernel modulok készítésében, valamint debuggolásában (pl dmesg), továbbá egy valós fizikai hardver interfészelésében, és a hozzá szükséges felhasználóbarát grafikus felület tervezésében.
