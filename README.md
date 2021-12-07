@@ -20,8 +20,17 @@ A szoftver az alábbi funkciókkal fog rendelkezni:
 # Megvalósított program
 Milyen funkciókat sikerült megvalósítani? Milyen eltérések vannak a kiíráshoz képest? Hogyan kell bekonfigurálni, elindítani?
 
+Szerver elindítása:
+1,) a kernel modul make paranccsal való lefordítása
+2,) "dtc spidev_disabler.dts -O dtb >spidev_disabler.dtbo" parancs segítéségvel a dts fájl fordítása mely az SPI bus 0 használatához szükséges
+3,) a fordított dts betöltése a "sudo dtoverlay -d . spidev_disabler" paranccsal
+4,) a kernel modul betöltése a "sudo insmod max7219x4.ko" paranccsal
+5,) szerver lefordítása a gcc segítségével pl gcc server.c -o server
+6,) a szerver elindítása a ./server {portszám} paranccsal
+
 **Bemutató videó URL:**
 https://youtu.be/Xmn5PWXf6pk
 
 # Tapasztalatok
 Milyen tapasztalatokat gyűjtött a feladat elkészítése során? Mi volt egyszerűbb / nehezebb a tervezetnél? Visszatekintve mit csinálna másként? (pár mondatban)
+Nem érdemes belekezdeni a megvalósításba a dokumentációk megfelelő tanulmányozása nélkül.
