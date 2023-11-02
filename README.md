@@ -4,38 +4,38 @@ Név/Nevek NEPTUN kóddal:
 - Kurucsai András (WWEI3B)
 - Kardos Martin (FRAV6D)
 
-# Feladat kiírás
-Feladatunkban egy olyan szoftvert valósítunk meg Qt, linux kernel modul, illetve socket felhasználásával amely képes egy Maxim Integrated MAX7219 chipeket használó LED mátrix áramkör vezérlésére.
-Az áramkör 4 db 8x8-as mátrixot tartalmaz melyeket 4db kaszkádosított integrált áramkör vezérel, velük SPI interfészen keresztül lehet kommunikálni.
+# Task description
+In this task we implement a software using Qt, linux kernel module and socket to control a LED matrix circuit using Maxim Integrated MAX7219 chips.
+The circuit consists of 4 8x8 matrices controlled by 4 cascaded integrated circuits, communicating via SPI interface.
 
-A szoftver az alábbi funkciókkal fog rendelkezni:
-* Grafikus felület Qt-ban megvalósítva, bekapcsolható, személyre szabható funkciókkal.
-* Socket kommunikáció két linux rendszer között.
-* A grafikus felületen keresztül animáció készítése (frame by frame).
-* Rajzok készítése a grafikus felületen, rajzok invertálása.
-* Rajzok elmentése fájlba.
-* Bekapcsolt mikrofon kijelzése.
-* Konfigurálható process kijelzés. (Pl. fut-e a microsoft teams, fut-e a discord? stb.)
-# Megvalósított program
-Az eredeti feladatkiírásunkoz képest csak a konfigurálható process kijelzést nem sikerült megvalósítani.
+The software will have the following functions:
+* A graphical interface implemented in Qt, with switchable, customizable functions.
+* Socket communication between two linux systems.
+* Frame by frame animation through the graphical interface.
+* Drawing in the graphical interface, inverting drawings.
+* Saving drawings to file.
+* Display microphone on.
+* Configurable process display (e.g. is microsoft teams running, is discord running, etc.)
+# Implemented program
+Compared to our original task description, only the configurable process display was not implemented.
 
-Szerver elindítása:
-* a kernel modul make paranccsal való lefordítása
-* "dtc spidev_disabler.dts -O dtb >spidev_disabler.dtbo" parancs segítéségvel a dts fájl fordítása mely az SPI bus 0 használatához szükséges
-* a fordított dts betöltése a "sudo dtoverlay -d . spidev_disabler" paranccsal
-* a kernel modul betöltése a "sudo insmod max7219x4.ko" paranccsal
-* szerver lefordítása a gcc segítségével pl gcc server.c -o server
-* a szerver elindítása a ./server {portszám} paranccsal
+Start server:
+* compile the kernel module with make
+* "dtc spidev_disabler.dts -O dtb >spidev_disabler.dtbo" to compile the dts file needed to use SPI bus 0
+* load the translated dts with "sudo dtoverlay -d . spidev_disabler
+* load the kernel module with "sudo insmod max7219x4.ko
+* compile server using gcc e.g. gcc server.c -o server
+* start the server with ./server {portnumber}
 
-A kliensoldalon a csatlakozás ip cím alapján történik, a kapcsolat megfelelőségét a gui a bal alsó sarokban indikálja.
+On the client side, the connection is made by ip address, the connection is indicated by the gui in the bottom left corner.
 
-**Bemutató videó URL:**
+**Show video URL:**
 https://youtu.be/Xmn5PWXf6pk
 
-# Tapasztalatok
+# Experiences
 
-Nem érdemes belekezdeni a megvalósításba a dokumentációk megfelelő tanulmányozása nélkül. A QT saját típusrendszerének elsajátítása sok utánaolvasást igényelt.
-A QT-ban a hardverrel kapcsolatos bájtok generálása az elképzelésnél könnyebben ment, viszont néhány funkció megvalósítása a dokumentáció alaposabb tanulmányozását igényelte (pl mikrofon lekérdezése).
-A kernel modul első betöltésekor tapasztaltuk hogy az SPI bus 0 már le van foglalva a rendszeren más modul által így ehhez kellett megoldást találni ami időigényes volt.
+It is not worth starting the implementation without proper study of the documentation. Mastering QT's own type system required a lot of re-reading.
+In QT, generating hardware-related bytes was easier than imagined, but implementing some features required a more thorough study of the documentation (e.g. microphone polling).
+When the kernel module was first loaded, it was found that SPI bus 0 was already occupied by another module on the system, so a solution had to be found which was time consuming.
 
-Tapasztalatot gyűjtöttünk a Qt alkalmazások, a kernel modulok készítésében, valamint debuggolásában (pl dmesg), továbbá egy valós fizikai hardver interfészelésében, és a hozzá szükséges felhasználóbarát grafikus felület tervezésében.
+We gained experience in building and debugging Qt applications, kernel modules (e.g. dmesg), interfacing a real physical hardware and designing a user-friendly graphical interface for it.
