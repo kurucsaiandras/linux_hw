@@ -1,6 +1,4 @@
-# Házi feladat
-
-Név/Nevek NEPTUN kóddal:
+Contributors:
 - Kurucsai András (WWEI3B)
 - Kardos Martin (FRAV6D)
 
